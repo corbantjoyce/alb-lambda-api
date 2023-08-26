@@ -79,7 +79,7 @@ Resources:
             return response     
       Description: AWS Lambda function
       FunctionName: 'lambda-function'
-      Handler: lambda_function.handler
+      Handler: index.handler
       MemorySize: 256
       Role: !GetAtt LambdaRole.Arn
       Runtime: python3.7
