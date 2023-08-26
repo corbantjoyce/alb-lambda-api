@@ -65,13 +65,18 @@ Resources:
     Properties:
       Code:
         ZipFile: |
-        def handler(event, context):
+          def handler(event, context):
           response = {
             'isBase64Encoded': False,
             'statusCode': 200,
-            'body': 'HELLO WORLD!'
+            'body': 'HELLO WORLD!',
+            'headers': {
+                'access-control-allow-methods': 'POST',
+                'access-control-allow-origin': '*',
+                'access-control-allow-headers': 'Content-Type, Access-Control-Allow-Headers'
+            }
           }
-          return response        
+          return response     
       Description: AWS Lambda function
       FunctionName: 'lambda-function'
       Handler: lambda_function.handler
